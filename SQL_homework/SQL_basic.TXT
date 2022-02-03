@@ -1,0 +1,25 @@
+1.
+select naziv, recept
+from jelo
+order by naziv DESC;
+
+2.
+SELECT adresa, radno_vreme
+FROM restoran_objekat
+WHERE radno_vreme= '24';
+
+3.
+SELECT*FROM korisnik
+WHERE br_telefona LIKE '064%';
+
+4.
+SELECT AVG(ukupna_cena) AS prosecna_cena FROM narudzbina;
+
+5.
+SELECT id_jelo, cena FROM ponuda WHERE cena BETWEEN 200 and 300;
+
+6.
+SELECT SUM (ukupna_cena), id_korisnik
+FROM narudzbina
+GROUP BY id_korisnik;
+

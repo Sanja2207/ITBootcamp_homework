@@ -1,0 +1,45 @@
+1. prikazati datum, id_korisnik i ukupnu cenu iz narudzbine koja ima sve ocene 5
+
+SELECT narudzbina.datum, narudzbina.id_korisnik, narudzbina.ukupna_cena, kvalitet, cena, usluga
+FROM ocene
+JOIN narudzbina ON ocene.id_narudzbina=narudzbina.id_narudzbina
+WHERE ocene.kvalitet=5 and ocene.cena=5 and ocene.usluga=5 ;
+
+
+2. prikazati ime korisnika koji je dao sve 5 za ocene za narudzbinu
+
+SELECT korisnik.id_korisnik, ocene.kvalitet, ocene.cena, ocene.usluga, korisnik.korisnicko_ime
+FROM ocene
+JOIN narudzbina on ocene.id_narudzbina=narudzbina.id_narudzbina
+JOIN korisnik ON narudzbina.id_korisnik=korisnik.id_korisnik
+WHERE kvalitet=5 and cena=5 and usluga=5 ;
+
+3. prikazati prosecnu ocenu za uslugu za svakog korisnika (grupisati po korisnicima)
+
+SELECT korisnik.id_korisnik,AVG(ocene.usluga) AS prosecna_ocena_za_usugu, korisnik.korisnicko_ime
+FROM ocene
+JOIN narudzbina on ocene.id_narudzbina=narudzbina.id_narudzbina
+JOIN korisnik ON narudzbina.id_korisnik=korisnik.id_korisnik
+GROUP BY korisnik.id_korisnik;
+
+
+11.  prikazati naziv i recept svakog jela cija je dostupna kolicina veca od 10
+
+SELECT jelo.naziv, jelo.recept, ponuda.dostupa_kolicina
+FROM jelo
+JOIN ponuda ON ponuda.id_jelo=jelo.id_jelo
+WHERE ponuda.dostupa_kolicina>10;
+
+12.  prikazati nazive jela koja su se nasla u sadrzaju narudzbine a da je izabrana kolicina bila 2 ili vise porcije.
+
+SELECT jelo.naziv, sadrzaj_narudzbine.id_sadrzaj, sadrzaj_narudzbine.kolicina
+FROM jelo
+JOIN ponuda ON ponuda.id_jelo=jelo.id_jelo
+JOIN sadrzaj_narudzbine ON ponuda.id_ponude=sadrzaj_narudzbine.id_ponude
+WHERE kolicina >=2;
+
+
+
+
+
+
