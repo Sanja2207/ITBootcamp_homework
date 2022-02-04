@@ -1,0 +1,28 @@
+TEST ID : 1
+TEST DESCRIPTION : provera URL
+TEST CASE STEPS :
+1. uneti URL https://it-255-dz-06-andjela-bojic3972.vercel.app/#
+2. assetovati da je browser uspeno pokrenuo zadati URL
+TEST PARAMETERS : URL
+ENVIRONMENT : Google Chrome
+
+
+TEST ID : 2
+TEST DESCRIPTION :  unos novog smestaja
+TEST CASE STEPS :
+1. Otvoriti browser i uneti https://it-255-dz-06-andjela-bojic3972.vercel.app/# I otici na sajt.
+2. Kliknuti u gornjem delu stranice na Naziv.
+3. Uneti "Kuca 7"
+4. Kliknuti u polje adrese
+5. Uneti "Ulica 77"
+6. Kliknuti u polje cena
+7. Uneti "777"
+8. Kliknuti u polje slika
+9. Uneti "https://markstewart.com/wp-content/uploads/2021/04/1_SB4-Front-View.jpg"
+10.Kliknuti na Submit
+11.Assertoveti da su se podaci koje smo uneli pojavili u ponudi na desnoj strani stanice, na kraju liste.
+TEST PARAMETERS : URL, text = "KUca 7", text = "Ulica 77", text= "777", text= "https://markstewart.com/wp-content/uploads/2021/04/1_SB4-Front-View.jpg", Submit
+ENVIRONMENT : Google Chrome
+
+
+
